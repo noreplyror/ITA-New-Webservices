@@ -63,7 +63,7 @@ module Webservices
     #config.salesforce_url = 'not_a_real_URL/'
     config.endpointme_url = 'http://localhost:3000'
     config.mailer_sender = "noreplyror@gmail.com"
-
+    config.current_domain_url = "http://c0006451.test.cloud.fedex.com:3000/"
     config.aws_credentials = {
       access_key_id:     'fake_value',
       secret_access_key: 'fake_value',

@@ -63,7 +63,6 @@ module Indexable
     end
 
     def create_index
-      byebug
       ES.client.indices.create(
         index: index_name,
         body:  { settings: settings, mappings: mappings },)

@@ -2,9 +2,10 @@ namespace :db do
   desc 'Create all endpoint and user indices'
   task create: :environment do
     Webservices::Application.model_classes.each do |model_class|
-      model_class.create_index #unless model_class.index_exists?
+      # binding.pry
+      model_class.create_index unless model_class.index_exists?
     end
-    binding.pry
+    # binding.pry
     UrlMapper.create_index unless UrlMapper.index_exists?
     User.create_index!
   end

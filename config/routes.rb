@@ -38,6 +38,10 @@ Webservices::Application.routes.draw do
       get '/search', to: 'screening_lists/consolidated#search'
     end
 
+    scope '/ftn_rpl' do
+      get '/search', to: 'ftn/rpl#search'
+    end
+
     scope '/market_intelligence' do
       get 'search', to: 'salesforce_articles/consolidated#search'
     end
