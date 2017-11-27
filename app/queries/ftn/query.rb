@@ -79,6 +79,7 @@ module Ftn
     end
 
     def generate_filter(json)
+      binding.pry
       json.filter do
         json.bool do
           json.must do
