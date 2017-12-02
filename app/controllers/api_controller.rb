@@ -69,6 +69,7 @@ class ApiController < ActionController::Base
   end
 
   def search_class
+    byebug
     parts = self.class.name.gsub(/Controller|Api::V\d+::/, '').split('::')
     parts[0] = parts[0].singularize
     parts.join('::').constantize

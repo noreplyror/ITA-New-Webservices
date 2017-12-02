@@ -3,11 +3,9 @@ module Ftn
     def generate_fuzzy_name_query(json)
       multi_word_query = @name =~ /\s/ ? true : false
       if multi_word_query
-        names         = %w( name_idx name_rev alt_idx alt_rev )
+        names         = %w( name_nm name_rev alt_idx alt_rev )
         names_kw      = %w( name_idx.keyword alt_idx.keyword name_rev.keyword alt_rev.keyword )
-        name_no_wss   = %w( name_no_ws name_no_ws_rev alt_no_ws alt_no_ws_rev
-                            name_no_ws_with_common name_no_ws_rev_with_common alt_no_ws_with_common alt_no_ws_rev_with_common )
-
+        
         single_token = names_kw + name_no_wss
         all_fields   = single_token + names
 

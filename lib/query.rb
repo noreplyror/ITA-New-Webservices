@@ -86,7 +86,9 @@ class Query
   end
 
   def generate_search_body
+    byebug
     Jbuilder.encode do |json|
+      byebug
       generate_query_and_filter(json)
       generate_aggregations(json)
     end
@@ -167,6 +169,7 @@ class Query
   end
 
   def generate_query_and_filter(json)
+    byebug
     query_from_fields(json, query_fields) do
       generate_filter(json)
     end
@@ -199,8 +202,11 @@ class Query
   end
 
   def generate_aggregations(json)
+    byebug
     json.aggs do
+      byebug
       aggregation_terms.each do |k, v|
+        byebug
         json.set! k do
           json.terms do
             json.field v[:field]

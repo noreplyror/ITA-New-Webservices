@@ -11,8 +11,8 @@ module Ftn
       extract_other_options(options)
     end
 
-    include ScreeningList::GenerateFuzzyNameQuery
-    include ScreeningList::GenerateSort
+    include Ftn::GenerateFuzzyNameQuery
+    include Ftn::GenerateSort
     include ::FuzzyNameStops
 
     private

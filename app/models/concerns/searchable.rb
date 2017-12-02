@@ -28,7 +28,7 @@ module Searchable
       query = query_class(options[:api_version]).new(options)
       search_options = build_search_options(query)
       results = ES.client.search(search_options)
-
+byebug
       hits = results['hits']
       hits[:aggregations] = results['aggregations']
       hits[:offset] = query.offset
@@ -125,6 +125,7 @@ module Searchable
     end
 
     def build_search_options(query)
+      byebug
       search_options = {
         index: index_names(query.try(:sources)),
         type:  model_classes.map { |mc| mc.to_s.typeize },
@@ -136,7 +137,7 @@ module Searchable
 
       search_options[:type] = index_type if index_type
       search_options[:search_type] = query.search_type if query.search_type
-
+byebug
       search_options
     end
 
